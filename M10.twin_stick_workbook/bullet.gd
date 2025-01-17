@@ -9,14 +9,10 @@ func _physics_process(delta: float) -> void:
 	var direction := Vector2.RIGHT.rotated(rotation) * trajectory
 	
 	position += direction
-	
 	_distance_traveled += trajectory * delta
 	
 	if _distance_traveled >= max_range:
 		_destroy()
-
-
-
 
 func _destroy():
 	queue_free()
