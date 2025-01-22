@@ -1,25 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://qulv5gnxvxuq"]
+[gd_scene load_steps=9 format=3 uid="uid://qulv5gnxvxuq"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_qb6k3"]
 [ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="1_sf3yl"]
 [ext_resource type="PackedScene" path="res://common/shadow.tscn" id="2_dtme6"]
 [ext_resource type="Script" path="res://sprite_2d.gd" id="3_ayvd0"]
+[ext_resource type="Script" path="res://weapon_pivot.gd" id="5_d4jnh"]
+[ext_resource type="PackedScene" uid="uid://c4vgl67hy8pej" path="res://weapon.tscn" id="5_t8ros"]
+[ext_resource type="Texture2D" uid="uid://descmcrky4ul" path="res://player/hand_fire_point.png" id="6_bdp1w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6iw5e"]
-radius = 13.0
+radius = 20.3961
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_qb6k3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -24)
-scale = Vector2(0.610119, 0.610119)
+position = Vector2(-0.999999, -41)
+scale = Vector2(0.924107, 0.924107)
 texture = ExtResource("1_sf3yl")
 script = ExtResource("3_ayvd0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
+unique_name_in_owner = true
+position = Vector2(1, -7)
 shape = SubResource("CircleShape2D_6iw5e")
 
 [node name="Shadow" parent="." instance=ExtResource("2_dtme6")]
@@ -27,3 +31,27 @@ position = Vector2(-9.53674e-07, 17)
 scale = Vector2(0.473485, 0.535714)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WeaponPivot" type="Node2D" parent="."]
+position = Vector2(0, -15)
+rotation = -0.0380256
+script = ExtResource("5_d4jnh")
+
+[node name="WeaponAnchor" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+
+[node name="Weapon" parent="WeaponPivot/WeaponAnchor" instance=ExtResource("5_t8ros")]
+position = Vector2(67.7119, -17.4384)
+
+[node name="LeftHand" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
+position = Vector2(68.9016, -39.1187)
+rotation = -0.478287
+scale = Vector2(0.788213, 0.788213)
+texture = ExtResource("6_bdp1w")
+
+[node name="RightHand" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
+position = Vector2(79.4863, -1.68921)
+rotation = -0.0949288
+scale = Vector2(0.747981, 0.747981)
+texture = ExtResource("6_bdp1w")
+flip_v = true

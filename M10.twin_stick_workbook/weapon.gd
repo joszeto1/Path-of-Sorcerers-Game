@@ -16,4 +16,4 @@ func shoot_bullet():
 	bullet.speed = speed
 	bullet.max_range = max_range
 	bullet.global_position = global_position
-	bullet.rotation = randf_range(- angle, angle)
+	bullet.rotation = randf_range(-angle/2.0, angle/2.0)
