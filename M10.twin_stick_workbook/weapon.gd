@@ -16,4 +16,10 @@ func shoot_bullet():
 	bullet.speed = speed
 	bullet.max_range = max_range
 	bullet.global_position = global_position
-	bullet.rotation = randf_range(-angle/2.0, angle/2.0)
+	#bullet.rotation = randf_range(-angle/2.0, angle/2.0)
+	#modified the above line and put below so you could see both
+	
+	#Adjust rotation based on weapon's direction and random spread
+	var direction = sign(global_scale.x) #positive if facing right, negative if facing left
+	var random_angle = randf_range(-angle / 2.0, angle /2.0)
+	bullet.rotation = global_rotation + random_angle * direction
