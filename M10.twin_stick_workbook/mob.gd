@@ -15,7 +15,6 @@ func _physics_process(delta: float) -> void:
 		var direction := global_position.direction_to(_player.global_position)
 		var distance := global_position.distance_to(_player.global_position)
 		var speed := max_speed if distance > 100 else max_speed * distance / 100
-	
 		var desired_velocity := direction * speed
 		velocity = velocity.move_toward(desired_velocity, acceleration * delta)
 	move_and_slide()
