@@ -2,11 +2,19 @@ class_name Mob extends CharacterBody2D
 
 @export var max_speed := 200.0
 @export var acceleration := 800.0
+@export var health := 5: set = set_health
 
 var _player : Player = null
 
 @onready var player_range: Area2D = %PlayerRange
 
+func die():
+	queue_free()
+
+func set_health(new_health: int):
+	health = new_health
+	if health <= 0:
+		die()
 
 func _physics_process(delta: float) -> void:
 	if _player == null:
