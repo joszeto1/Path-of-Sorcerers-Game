@@ -12,4 +12,4 @@
 position = Vector2(757, 681)
 
 [node name="mob" parent="." instance=ExtResource("3_kf48t")]
-position = Vector2(532, 239)
+position = Vector2(411, 279)
