@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qulv5gnxvxuq"]
+[gd_scene load_steps=10 format=3 uid="uid://qulv5gnxvxuq"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_qb6k3"]
 [ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="1_sf3yl"]
@@ -10,6 +10,13 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6iw5e"]
 radius = 20.3961
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7838d"]
+bg_color = Color(0.303676, 0.742896, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -55,3 +62,13 @@ rotation = -0.0949288
 scale = Vector2(0.747981, 0.747981)
 texture = ExtResource("6_bdp1w")
 flip_v = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -44.0
+offset_top = -119.0
+offset_right = 43.0
+offset_bottom = -107.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_7838d")
+value = 76.27
+show_percentage = false
