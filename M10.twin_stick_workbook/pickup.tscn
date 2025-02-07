@@ -1,19 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl8doa1gg65u2"]
+[gd_scene load_steps=7 format=3 uid="uid://cl8doa1gg65u2"]
 
 [ext_resource type="Texture2D" uid="uid://be8lmb157qflx" path="res://pickups/pickup_health.png" id="1_dxdfa"]
 [ext_resource type="Script" path="res://pickup.gd" id="1_p5lr7"]
+[ext_resource type="Script" path="res://healing_item.gd" id="2_1a5hp"]
+[ext_resource type="AudioStream" uid="uid://c2woejhi871h1" path="res://pickups/pickup.wav" id="4_xxgu2"]
+
+[sub_resource type="Resource" id="Resource_fjdtr"]
+script = ExtResource("2_1a5hp")
+heal_amount = 2
+sfx = ExtResource("4_xxgu2")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5j5qb"]
 radius = 29.0
 
 [node name="Pickup" type="Area2D"]
 script = ExtResource("1_p5lr7")
+item = SubResource("Resource_fjdtr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture = ExtResource("1_dxdfa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_5j5qb")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_xxgu2")
