@@ -8,10 +8,12 @@
 [sub_resource type="Resource" id="Resource_fjdtr"]
 script = ExtResource("2_1a5hp")
 heal_amount = 2
+display_name = ""
+texture = ExtResource("1_dxdfa")
 sfx = ExtResource("4_xxgu2")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5j5qb"]
-radius = 29.0
+radius = 33.0151
 
 [node name="Pickup" type="Area2D"]
 script = ExtResource("1_p5lr7")
