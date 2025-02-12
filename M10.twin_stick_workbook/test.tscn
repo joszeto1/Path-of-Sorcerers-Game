@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvummqrx3domw"]
+[gd_scene load_steps=6 format=3 uid="uid://bvummqrx3domw"]
 
 [ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="1_l4hsc"]
 [ext_resource type="PackedScene" uid="uid://qulv5gnxvxuq" path="res://player.tscn" id="2_m5bkv"]
 [ext_resource type="PackedScene" uid="uid://dckdq838nf7n2" path="res://mob.tscn" id="3_kf48t"]
 [ext_resource type="PackedScene" uid="uid://cl8doa1gg65u2" path="res://pickup.tscn" id="4_p1sm5"]
+[ext_resource type="PackedScene" uid="uid://c7d2kuowrb2fc" path="res://chest.tscn" id="5_r0xoi"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,3 +18,9 @@ position = Vector2(532, 239)
 
 [node name="Pickup" parent="." instance=ExtResource("4_p1sm5")]
 position = Vector2(1148, 469)
+
+[node name="Chest" parent="." instance=ExtResource("5_r0xoi")]
+position = Vector2(1152, 697)
+
+[node name="Chest2" parent="." instance=ExtResource("5_r0xoi")]
+position = Vector2(628, 812)

@@ -23,6 +23,7 @@ motion_mode = 1
 script = ExtResource("1_qb6k3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(-0.999999, -41)
 scale = Vector2(0.924107, 0.924107)
 texture = ExtResource("1_sf3yl")
@@ -65,6 +66,7 @@ flip_v = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
+z_index = 2
 offset_left = -44.0
 offset_top = -119.0
 offset_right = 43.0

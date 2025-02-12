@@ -19,14 +19,14 @@ radius = 33.0151
 script = ExtResource("1_p5lr7")
 item = SubResource("Resource_fjdtr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-texture = ExtResource("1_dxdfa")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_5j5qb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("1_dxdfa")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
