@@ -19,6 +19,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 65
 motion_mode = 1
 script = ExtResource("1_qb6k3")
 
