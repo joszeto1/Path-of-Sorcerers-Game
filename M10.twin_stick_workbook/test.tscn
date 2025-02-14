@@ -21,6 +21,3 @@ position = Vector2(1148, 469)
 
 [node name="Chest" parent="." instance=ExtResource("5_r0xoi")]
 position = Vector2(1152, 697)
-
-[node name="Chest2" parent="." instance=ExtResource("5_r0xoi")]
-position = Vector2(628, 812)

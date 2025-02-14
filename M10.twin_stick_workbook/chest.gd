@@ -1,18 +1,11 @@
+@tool
+
 class_name Chest extends Area2D
 
-@onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var animation_player := %AnimationPlayer as AnimationPlayer
 @export var possible_items: Array[Item] = []
-var is_player_near := false
 
-func _unhandled_input(event: InputEvent) -> void:
-	if is_player_near and event.is_action_pressed("interact"):
-		animation_player.play("open")
-		
-		create_pickup()
-		get_viewport().set_input_as_handled()
-	
-	if animation_player.assigned_animation == "open":
-		is_player_near = false
+var is_player_near := false
 
 func _ready() -> void:
 	body_entered.connect(func (body: Node) -> void:
@@ -21,6 +14,14 @@ func _ready() -> void:
 	body_exited.connect(func (body: Node) -> void:
 		is_player_near = false
 	)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if is_player_near and event.is_action_pressed("interact"):
+		animation_player.play("open")
+		
+		create_pickup()
+		get_viewport().set_input_as_handled()
+		set_process_unhandled_input(false)
 
 func create_pickup() -> void:
 	if possible_items == []:
